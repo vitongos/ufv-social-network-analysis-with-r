@@ -12,5 +12,4 @@ install.packages("wordcloud", repos = "http://cran.cnr.berkeley.edu/", dependenc
 library("devtools")
 install_github("pablobarbera/Rfacebook", subdir="Rfacebook")
 install_github("geoffjentry/twitteR")
-install_github("mpiccirilli/Rlinkedin")
 install.packages("xml2", repos = "http://cran.cnr.berkeley.edu/", dependencies = TRUE)
