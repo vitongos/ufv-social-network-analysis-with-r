@@ -9,6 +9,7 @@ install.packages("devtools", repos = "http://cran.cnr.berkeley.edu/", dependenci
 install.packages("RCurl", repos = "http://cran.cnr.berkeley.edu/", dependencies = TRUE)
 install.packages("sqldf", repos = "http://cran.cnr.berkeley.edu/", dependencies = TRUE)
 install.packages("wordcloud", repos = "http://cran.cnr.berkeley.edu/", dependencies = TRUE)
+library("devtools")
 install_github("pablobarbera/Rfacebook", subdir="Rfacebook")
 install_github("geoffjentry/twitteR")
 install_github("mpiccirilli/Rlinkedin")
