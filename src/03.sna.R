@@ -43,7 +43,7 @@ attributes <- read.csv('data/attributes.csv', header=T)
 attributes
 for (i in V(graph)) {
 	for (j in names(attributes)) {
-		graph <- set.vertex.attribute(graph, j, index=i, attributes[i+1,j])
+		graph <- igraph::set.vertex.attribute(graph, j, index=i, attributes[i+1,j])
 	}
 }
 summary(graph)
@@ -54,8 +54,8 @@ summary(graph)
 ###
 
 # Obtener los grados
-deg_full_in <- degree(graph, mode="in") 
-deg_full_out <- degree(graph, mode="out") 
+deg_full_in <-  igraph::degree(graph, mode="in") 
+deg_full_out <-  igraph::degree(graph, mode="out") 
 deg_full_in
 deg_full_out
 
