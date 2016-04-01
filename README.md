@@ -26,5 +26,5 @@ deploy/r.sh
 Ejecutar el siguiente script (puede tardar un poco):
 ```bash
 cd ~/sna-r-src/src
-R --no-save < setup.R
+sudo R --no-save < setup.R
 ```
