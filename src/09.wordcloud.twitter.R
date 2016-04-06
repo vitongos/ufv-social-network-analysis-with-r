@@ -1,5 +1,7 @@
 library(twitteR) 
 library(tm)
+library(RColorBrewer)
+library(wordcloud)
  
 ###
 # 1. Conexión a Twitter

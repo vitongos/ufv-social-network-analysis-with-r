@@ -1,15 +1,17 @@
 library(twitteR) 
 library(tm)
+library(plyr)
+library(stringr)
  
 ###
 # 1. Conexión a Twitter
 ###
 
 # Conectar mediante OAuth (directo)
-api_key <- "XXXXXXX"
-api_secret <- "XXXXXXX"
-access_token <- "XXXXXXX"
-access_token_secret <- "XXXXXXX"
+api_key <- "XXXXXXXXX"
+api_secret <- "XXXXXXXXX"
+access_token <- "XXXXXXXXX"
+access_token_secret <- "XXXXXXXXX"
 setup_twitter_oauth(
 		api_key,
 		api_secret,
@@ -62,6 +64,7 @@ dataframe$text
 ###
 
 # Importar los términos positivos y negativos
+setwd("/home/cloudera/sna-r-src/src")
 opinion.lexicon.pos = scan('data/positive-words.txt',
 		what='character', 
 		comment.char=';')
@@ -74,8 +77,7 @@ head(opinion.lexicon.neg, n = 5)
 # Función de clasificación de términos
 getSentimentScore = function(sentences, 
 		words.positive,
-		words.negative, 
-		.progress='none')
+		words.negative)
 {
 		scores = laply(sentences,
 				function(sentence, words.positive, words.negative) {
@@ -88,8 +90,7 @@ getSentimentScore = function(sentences,
 						return(score)
 				},
 				words.positive, 
-				words.negative, 
-				.progress=.progress)
+				words.negative)
 		
 		return(data.frame(text = sentences, score = scores))
 }
@@ -98,10 +99,10 @@ tweets <- getSentimentScore(dataframe$text,
 		opinion.lexicon.pos, 
 		opinion.lexicon.neg)
 tweets
+aggregate(text ~ score, tweets, function(x) length(unique(x)))
 
 # Dibujar gráfico de resultados
 hist(tweets$score, 
 		xlab = "Sentiment Score",
 		main = "Barack's sentiments",
 		prob = TRUE)
-lines(density(tweets$score))
