@@ -10,7 +10,7 @@ library(scales)
 ###
 
 # Generar el token en: https://developers.facebook.com/tools/explorer 
-token <- 'XXXXXXX'
+token <- 'XXXXXXXX'
 
 
 ###

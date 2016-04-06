@@ -5,7 +5,7 @@ library(igraph)
 ###
  
 # Obtener los data frames de estructura del grafo
-setwd("./")
+setwd("/home/cloudera/sna-r-src/src")
 advice_data_frame <- read.table('data/edgelist-advice.txt')
 friendship_data_frame <- read.table('data/edgelist-friendship.txt')
 reports_to_data_frame <- read.table('data/edgelist-reportsTo.txt')
@@ -113,7 +113,6 @@ get.vertex.attribute(graph, 'DEPT')
 ###
  
 # Mostrar el grafo (exportando a PDF)
-setwd("/tmp")
 pdf("1.1_Full.pdf")
 plot(graph)
 dev.off()

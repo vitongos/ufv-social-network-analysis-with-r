@@ -6,8 +6,8 @@ library(Rfacebook)
 ###
 
 # Conectar mediante OAuth
-app_id <- "XXXXXXX"
-app_secret <- "XXXXXXX"
+app_id <- "XXXXXXXX"
+app_secret <- "XXXXXXXX"
 fb_oauth <- fbOAuth(app_id = app_id, app_secret = app_secret)
 save(fb_oauth, file="fb_oauth")
 load("fb_oauth")
@@ -20,7 +20,7 @@ me$name
 ###
 
 # Generar el token en: https://developers.facebook.com/tools/explorer 
-token <- 'XXXXXXX'
+token <- 'XXXXXXXXXX'
 me <- getUsers("me", token, private_info = TRUE)
 me$name
 

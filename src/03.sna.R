@@ -23,7 +23,7 @@ gden(flo)
 nflo <- network(flo,directed=FALSE)
 gden(nflo)
 
-setwd("./")
+setwd("/home/cloudera/sna-r-src/src")
 advice_data_frame <- read.table('data/edgelist-advice.txt')
 advice_data_frame
 colnames(advice_data_frame) <- c('from', 'to', 'advice_tie')

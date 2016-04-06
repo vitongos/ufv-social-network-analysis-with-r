@@ -4,14 +4,14 @@ library(igraph)
 # 1. Carga y preparación de datos
 ###
  
-setwd("./")
+setwd("/home/cloudera/sna-r-src/src")
 advice_data_frame <- read.table('data/edgelist-advice.txt')
 advice_data_frame
 colnames(advice_data_frame) <- c('from', 'to', 'advice_tie')
 head(advice_data_frame) 
  
 # Eliminar las filas que no representan aristas
-graph_nonzero_edges <- subset(combined_data_frame, (advice_tie > 0))
+graph_nonzero_edges <- subset(advice_data_frame, (advice_tie > 0))
 head(graph_nonzero_edges)
  
 # Crear el grafo
